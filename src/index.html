@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,150 +10,134 @@
       rel="stylesheet"
     />
     <title>RPSLS Showdown</title>
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <main class="h-screen w-screen bg-blue-950 flex flex-col justify-center items-center">
-      <section class="heading flex flex-col justify-center items-center">
-        <div class="description flex flex-col justify-center items-center">
-          <p class="text-white">ROCK</p>
-          <p class="text-white">PAPER</p>
-          <p class="text-white">SCISSORS</p>
-          <p class="text-white">LIZARD</p>
-          <p class="text-white">SPOCK</p>
-        </div>
-        <div class="display-points">
-          <button class="reset">Reset</button>
-          <input class="computer-points" readonly />
-          <input class="player-points" readonly />
-        </div>
-      </section>
-      <section class="game-options">
-        <button class="circle rock" value="rock">
-          <div class="inner r"></div>
-        </button>
-        <button class="circle paper" value="paper">
-          <div class="inner p"></div>
-        </button>
-        <button class="circle scissor" value="scissor">
-          <div class="inner s"></div>
-        </button>
-        <button class="circle lizard" value="lizard">
-          <div class="inner l"></div>
-        </button>
-        <button class="circle spock" value="spock">
-          <div class="inner sp"></div>
-        </button>
-      </section>
-      <section>
-        <button class="rules-btn">RULES</button>
-        <p class="display-winner"></p>
-        <div class="modal">
-          <div class="content">
-            <span class="close">&times;</span>
-            <h2 class="text-white">Rules</h2>
-            <ul>
-              <li class="text-white">Scissors cuts paper.</li>
-              <li class="text-white">Paper covers rock.</li>
-              <li class="text-white">Rock crushes lizard.</li>
-              <li class="text-white">Lizard poisons Spock.</li>
-              <li class="text-white">Spock smashes scissors.</li>
-              <li class="text-white">Scissors decapitates lizard.</li>
-              <li class="text-white">Lizard eats paper.</li>
-              <li class="text-white">Paper disproves Spock.</li>
-              <li class="text-white">Spock vaporizes rock.</li>
-              <li class="text-white">Rock crushes scissors.</li>
-              
-            </ul>
-          </div>
-        </div>
-      </section>
-    </main>
-    <script src="main.js" type="module"></script>
-  </body>
-</html> -->
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&display=swap" rel="stylesheet" />
-    <title>RPSLS Showdown</title>
+    <link rel="stylesheet" href="main.css" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-sans">
+  <body
+    class="h-screen w-screen overflow-hidden bg-gradient-to-r from-blue-500 to-purple-600 text-white font-sans relative"
+  >
+    <div class="background-shapes"></div>
+
+    <div class="flex items-center justify-center text-purple-200 font-sans">
+      <h1
+        class="text-5xl font-bold drop-shadow-lg text-gradient bg-clip-text leading-tight transition-all duration-300"
+      >
+        Choose To Win!
+      </h1>
+    </div>
 
     <main class="h-screen w-screen flex flex-col items-center justify-around">
+      <div
+        class="heading flex items-center justify-center w-96 h-14 bg-purple-800 rounded-2xl shadow-xl p-6 hover:scale-105 transition-all overflow-hidden"
+      >
+        <h1
+          class="text-4xl font-bold drop-shadow-lg text-gradient bg-clip-text animate-marquee whitespace-nowrap"
+        >
+          RPSLS MANIA
+        </h1>
+      </div>
 
-      <!-- Heading Section -->
-      <div class="heading flex items-center justify-between w-80 h-48 bg-blue-800 rounded-2xl shadow-xl p-4">
-        <h1 class="text-4xl font-bold drop-shadow-lg">RPSLS Showdown</h1>
-        <div class="text-lg space-y-2">
-          <p>Rock</p>
-          <p>Paper</p>
-          <p>Scissors</p>
-          <p>Lizard</p>
-          <p>Spock</p>
+      <div
+        class="border-4 border-white w-80 h-36 flex items-center justify-center bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg shadow-lg"
+      >
+        <div class="flex justify-between w-full px-4">
+          <div
+            class="computer-box flex flex-col items-center justify-center p-4 bg-white text-black rounded-lg shadow-md w-28 h-20"
+          >
+            <p class="text-semibold">Computer</p>
+            <p class="computer-points text-2xl font-bold">0</p>
+            <span class="text-sm">Score</span>
+          </div>
+
+          <div
+            class="player-box flex flex-col items-center justify-center p-4 bg-white text-black rounded-lg shadow-md w-28 h-20"
+          >
+            <p class="text-semibold">Player</p>
+            <p class="player-points text-2xl font-bold">0</p>
+            <span class="text-sm">Score</span>
+          </div>
         </div>
       </div>
+      <p class="display-winner text-2xl text-center font-semibold"></p>
 
-      
+      <div class="flex flex-wrap gap-6">
+        <button
+          class="game-btn rock p-8 bg-red-500 rounded-full flex items-center justify-center h-28 w-28 shadow-xl"
+          value="rock"
+        >
+          <img src="../assests/images/rock.png" alt="rock" />
+        </button>
 
-      <!-- Game Options -->
-      <div class="grid grid-cols-3 gap-6">
-        <button class="game-btn rock p-8 bg-red-500 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition" value="rock">
-          <div class="text-4xl font-bold">🪨</div>
+        <button
+          class="game-btn paper p-8 bg-blue-500 rounded-full flex items-center justify-center h-28 w-28 shadow-xl"
+          value="paper"
+        >
+          <img src="../assests/images/hand.png" alt="paper" />
         </button>
-        <button class="game-btn paper p-8 bg-blue-500 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition" value="paper">
-          <div class="text-4xl font-bold">📄</div>
+
+        <button
+          class="game-btn scissor p-8 bg-green-500 rounded-full flex items-center justify-center h-28 w-28 shadow-xl"
+          value="scissor"
+        >
+          <img src="../assests/images/scissor.png" alt="scissor" />
         </button>
-        <button class="game-btn scissor p-8 bg-green-500 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition" value="scissor">
-          <div class="text-4xl font-bold">✂️</div>
+
+        <button
+          class="game-btn lizard p-8 bg-yellow-500 rounded-full flex items-center justify-center h-28 w-28 shadow-xl"
+          value="lizard"
+        >
+          <img src="../assests/images/lizard.png" alt="lizard" />
         </button>
-        <button class="game-btn lizard p-8 bg-yellow-500 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition" value="lizard">
-          <div class="text-4xl font-bold">🦎</div>
-        </button>
-        <button class="game-btn spock p-8 bg-indigo-500 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition" value="spock">
-          <div class="text-4xl font-bold">🖖</div>
+
+        <button
+          class="game-btn spock p-8 bg-indigo-500 rounded-full flex items-center justify-center h-28 w-28 shadow-xl"
+          value="spock"
+        >
+          <img src="../assests/images/spock.png" alt="spock" />
         </button>
       </div>
 
-      <!-- Game Reset & Rules Section -->
-      <div class="mt-6 flex justify-center items-center gap-6">
-        <button class="reset bg-gray-800 text-lg font-bold text-white py-2 px-4 rounded-full hover:bg-gray-700 transition">Reset</button>
-        <button class="rules-btn bg-purple-700 text-lg font-bold text-white py-2 px-4 rounded-full hover:bg-purple-600 transition">Rules</button>
+      <div class="flex justify-center items-center gap-6 mb-12">
+        <button
+          class="reset bg-gray-800 text-lg font-bold text-white py-2 px-4 rounded-full hover:bg-gray-700 hover:scale-105 transition-all"
+        >
+          Reset
+        </button>
+        <button
+          class="rules-btn bg-purple-700 text-lg font-bold text-white py-2 px-4 rounded-full hover:bg-purple-600 hover:scale-105 transition-all"
+        >
+          Rules
+        </button>
       </div>
-
-      <!-- Winner Display -->
-      <p class="display-winner text-2xl mt-4 text-center font-semibold"></p>
-
     </main>
-<!-- Modal for Game Rules -->
-<div class="modal hidden fixed inset-0 flex justify-center items-center z-50 bg-black bg-opacity-60">
-    <div class="modal-content relative bg-blue-800 rounded-xl p-6 text-white">
-      <button class="close absolute top-0 right-0 p-4 text-3xl text-white">×</button>
-      <h2 class="text-3xl font-bold mb-4 text-center">Game Rules</h2>
-      <div class="grid place-items-center">
-        <ul class="grid grid-cols-3 gap-6 justify-center items-center">
-          <li class="bg-yellow-200 rounded-full w-16 h-16 flex items-center justify-center p-2 text-center">✂️ Scissors cuts paper.</li>
-          <li class="bg-yellow-200 rounded-full w-16 h-16 flex items-center justify-center p-2 text-center">📄 Paper covers rock.</li>
-          <li class="bg-yellow-200 rounded-full w-16 h-16 flex items-center justify-center p-2 text-center">🪨 Rock crushes lizard.</li>
-          <li class="bg-yellow-200 rounded-full w-16 h-16 flex items-center justify-center p-2 text-center">🦎 Lizard poisons Spock.</li>
-          <li class="bg-yellow-200 rounded-full w-16 h-16 flex items-center justify-center p-2 text-center">🖖 Spock smashes scissors.</li>
-          <li class="bg-yellow-200 rounded-full w-16 h-16 flex items-center justify-center p-2 text-center">✂️ Scissors decapitates lizard.</li>
-          <li class="bg-yellow-200 rounded-full w-16 h-16 flex items-center justify-center p-2 text-center">🦎 Lizard eats paper.</li>
-          <li class="bg-yellow-200 rounded-full w-16 h-16 flex items-center justify-center p-2 text-center">📄 Paper disproves Spock.</li>
-          <li class="bg-yellow-200 rounded-full w-16 h-16 flex items-center justify-center p-2 text-center">🖖 Spock vaporizes rock.</li>
-          <li class="bg-yellow-200 rounded-full w-16 h-16 flex items-center justify-center p-2 text-center">🪨 Rock crushes scissors.</li>
-        </ul>
+
+    <!-- Modal -->
+    <div
+      class="modal hidden fixed inset-0 flex justify-center items-center z-50 bg-black bg-opacity-60 transition-opacity duration-300"
+    >
+      <div class="modal-content relative p-6 text-black">
+        <button
+          class="close absolute top-10 right-10 p-4 text-3xl text-white hover:bg-gray-700 rounded-full transition-all"
+        >
+          ×
+        </button>
+        <h2 class="text-3xl font-bold mb-4 text-center text-white">Game Rules</h2>
+        <div class="modal-rules-container">
+          <ul>
+            <li>✂️ Scissors cuts paper.</li>
+            <li>📄 Paper covers rock.</li>
+            <li>🪨 Rock crushes lizard.</li>
+            <li>🦎 Lizard poisons Spock.</li>
+            <li>🖖 Spock smashes scissors.</li>
+            <li>✂️ Scissors decapitates lizard.</li>
+            <li>🦎 Lizard eats paper.</li>
+            <li>📄 Paper disproves Spock.</li>
+            <li>🖖 Spock vaporizes rock.</li>
+            <li>🪨 Rock crushes scissors.</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  
-    
 
     <script src="main.js" type="module"></script>
   </body>
