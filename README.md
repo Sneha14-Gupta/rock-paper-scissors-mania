@@ -20,6 +20,6 @@ The objective of the game is to win the game by scoring the most points.
 - The player's choice determines the outcome of the game.
 - The game is won by the player who gets the most points.
 
-#preview
+# Preview
 <img src="assests/images/mobile.png" width="auto" height="auto"/>
 <img src="assests/images/laptop.png" width="auto" height="auto"/>
