@@ -60,7 +60,7 @@
       </div>
       <p class="display-winner text-2xl text-center font-semibold"></p>
 
-      <div class="flex flex-wrap gap-6">
+      <div class="flex flex-wrap gap-6 ml-4">
         <button
           class="game-btn rock p-8 bg-red-500 rounded-full flex items-center justify-center h-28 w-28 shadow-xl"
           value="rock"
@@ -83,14 +83,14 @@
         </button>
 
         <button
-          class="game-btn lizard p-8 bg-yellow-500 rounded-full flex items-center justify-center h-28 w-28 shadow-xl"
+          class="game-btn lizard p-8 bg-yellow-500 rounded-full flex items-center justify-center h-28 w-28 shadow-xl relative left-16 lg:-left-1"
           value="lizard"
         >
           <img src="../assests/images/lizard.png" alt="lizard" />
         </button>
 
         <button
-          class="game-btn spock p-8 bg-indigo-500 rounded-full flex items-center justify-center h-28 w-28 shadow-xl"
+          class="game-btn spock p-8 bg-indigo-500 rounded-full flex items-center justify-center h-28 w-28 shadow-xl relative left-20 lg:-left-1"
           value="spock"
         >
           <img src="../assests/images/spock.png" alt="spock" />
@@ -121,7 +121,9 @@
         >
           ×
         </button>
-        <h2 class="text-3xl font-bold mb-4 text-center text-white">Game Rules</h2>
+        <h2 class="text-3xl font-bold mb-4 text-center text-white">
+          Game Rules
+        </h2>
         <div class="modal-rules-container">
           <ul>
             <li>✂️ Scissors cuts paper.</li>
